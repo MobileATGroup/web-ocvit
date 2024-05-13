@@ -1,1 +1,1 @@
-export const Font_Inter = "Inter";
+export const Font_Poppins= "Poppins";

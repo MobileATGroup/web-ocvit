@@ -1,29 +1,38 @@
 import { Font_Poppins } from "@/assets/fonts"
-import { commonHelpers } from "@/utils/helpers"
-import { url } from "inspector"
-import { keyframes } from "tss-react"
 import { makeStyles } from "tss-react/mui"
 
 
 const useStyles = makeStyles({
-  name: "home",
+  name: "SliderImage",
 })(theme => {
   return {
     root: {
-      height: "100vh",
-      width: "100vw",
-      overflow: "hidden",
-      position: "relative",
-      backgroundColor: 'white',
+      [theme.breakpoints.down("md")]: {
+       
+      }
     },
-    containerBanner: {
-      width: "100%",
-      height: "auto",
+    buttonNext: {
+      right: 0, 
+      width: 48,
+      height: 56, 
+      '& :before': {
+        fontSize: 48
+      }
+    },
+    dots: {
+      display: "block",
+    },
+    img: {
+      width: "100%"
+    },
+    containerSlider: {
       position: "relative",
       overflow: "hidden",
-      display: "flex",
+      width: "100%",
+      height: "100%",
       flexDirection: "column",
       justifyContent: "center",
+      alignItems: "center",
     },
     container: {
       display: "flex",
@@ -31,6 +40,7 @@ const useStyles = makeStyles({
       justifyContent: "center",
       alignItems: "center",
       position: "absolute",
+      backgroundColor: 'red',
       height: "100%",
       width: "100%",
     },
@@ -49,28 +59,10 @@ const useStyles = makeStyles({
       color: 'white',
     },
     containerButon: {
-      width: "100%",
-      display: "flex",
-      justifyContent: "center",
-      alignItems: "center",
-      flexDirection: "column",
-      paddingTop: 32,
+
     },
     contentButon: {
-      backgroundColor: 'rgba(244, 221, 160, 1)',
-    },
-    main: {
-      width: "100%",
-      height: "100%",
-      overflow: "auto",
-    },
-    bodyMain: {
-      width: "100%",
-      height: "100%",
-      backgroundColor: 'red',
-      position: "relative",
-      display: "flex",
-      padding: '58px 24px'
+
     }
   }
 })
