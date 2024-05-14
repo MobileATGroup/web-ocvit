@@ -1,1 +1,1 @@
-export const Font_Poppins= "Poppins";
+export const Font_Poppins= "var(--font-SVN-Poppins)";

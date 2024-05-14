@@ -7,6 +7,7 @@ import Header from "../components/Header"
 import SliderImage from "@/components/SliderImage"
 import { dataImage } from "./config"
 import MainLeft from "./MainLeft"
+import MainRight from "./MainRight"
 
 type MenuLeftType = {
   childrenChild?: React.ReactNode
@@ -31,10 +32,11 @@ const Home = (props: MenuLeftType) => {
           </div>
         </div>
         <Grid container className={classes.bodyMain}>
-          <Grid item xs={3} sm={3}>
+          <Grid item xs={2} sm={2}>
             <MainLeft />
           </Grid>
-          <Grid item xs={9} sm={9}>
+          <Grid item xs={10} sm={10}>
+            <MainRight />
           </Grid>
         </Grid>
       </div>

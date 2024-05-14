@@ -65,25 +65,55 @@ const openSans = Open_Sans({
   variable: "--font-open-sans",
 })
 
-const BebasKai = localFont({
+const SVN_Poppins = localFont({
   src: [
     {
-      path: '../assets/fonts/BebasNeue-Regular.ttf',
+      path: '../assets/fonts/Poppins-Thin.otf',
+      weight: '100',
+      style: 'normal',
+    },
+    {
+      path: '../assets/fonts/Poppins-ExtraLight.otf',
+      weight: '200',
+      style: 'normal',
+    },
+    {
+      path: '../assets/fonts/Poppins-Light.otf',
+      weight: '300',
+      style: 'normal',
+    },
+    {
+      path: '../assets/fonts/Poppins-Regular.otf',
       weight: '400',
       style: 'normal',
     },
     {
-      path: '../assets/fonts/BebasNeue-Regular.ttf',
+      path: '../assets/fonts/Poppins-Medium.otf',
       weight: '500',
       style: 'normal',
     },
     {
-      path: '../assets/fonts/BebasNeue-Regular.ttf',
+      path: '../assets/fonts/Poppins-SemiBold.otf',
+      weight: '600',
+      style: 'normal',
+    },
+    {
+      path: '../assets/fonts/Poppins-Bold.otf',
       weight: '700',
       style: 'normal',
     },
+    {
+      path: '../assets/fonts/Poppins-ExtraBold.otf',
+      weight: '800',
+      style: 'normal',
+    },
+    {
+      path: '../assets/fonts/Poppins-Black.otf',
+      weight: '900',
+      style: 'normal',
+    },
   ],
-  variable: "--font-bebaskai"
+  variable: "--font-SVN-Poppins"
 })
 const clientSideEmotionCacheMui = createEmotionCacheMui()
 const clientSideEmotionCacheApp = createEmotionCacheApp()
@@ -183,14 +213,14 @@ const MyApp: React.FunctionComponent<MyAppProps> = props => {
       <style jsx global>{`
         html {
           font-family: ${openSans.style.fontFamily},
-            ${BebasKai.style.fontFamily};
+            ${SVN_Poppins.style.fontFamily};
         }
       `}</style>
       <CacheProvider value={emotionCacheMui}>
         <TssCacheProvider value={emotionCacheApp}>
           <ThemeProvider theme={themeWithLocale}>
             <AOSProvider>
-              <main className={`${BebasKai.variable}`}>
+              <main className={`${SVN_Poppins.variable}`}>
                 <RouterLoadingLinearProgress />
                 <CssBaseline />
                 <InitializeMyApp />

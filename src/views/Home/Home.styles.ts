@@ -10,11 +10,12 @@ const useStyles = makeStyles({
 })(theme => {
   return {
     root: {
-      height: "100vh",
-      width: "100vw",
+      height: "100%",
+      width: "100%",
       overflow: "hidden",
       position: "relative",
       backgroundColor: 'white',
+      // paddingBottom: 58,
     },
     containerBanner: {
       width: "100%",
@@ -67,10 +68,11 @@ const useStyles = makeStyles({
     bodyMain: {
       width: "100%",
       height: "100%",
-      backgroundColor: 'red',
+      backgroundColor: 'white',
       position: "relative",
       display: "flex",
-      padding: '58px 24px'
+      padding: '58px 24px',
+      overflow: "hidden",
     }
   }
 })
