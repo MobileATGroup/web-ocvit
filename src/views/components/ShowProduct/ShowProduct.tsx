@@ -11,18 +11,23 @@ const ShowProduct = (props: dataProduct) => {
     console.log('data', data);
     return (
         <div className={classes.root}>
-            <div>
-                <Button>Button</Button>
+            <div className={classes.contentCateGory}>
+                <Button className={classes.CateGory}>BU LÔNG LỤC GIÁC CHÌM</Button>
             </div>
-            {data?.map((item, index) => (
-                <div key={index} className={classes.container}>
-                    <img src={item.image} alt="product" className={classes.img} />
-                    <span className={classes.title}>{item.title}</span>
-                    <span className={classes.describe}>{item.describe}</span>
-                    <Button>Liên Hệ</Button>
-                </div>
-            
-            ))}
+            <div className={classes.containerProduct}>
+                {data?.map((item, index) => (
+                    <div key={index} className={classes.container}>
+                        <img src={item.image} alt="product" className={classes.img} />
+                        <span className={classes.title}>{item.title}</span>
+                        <span className={classes.describe}>{item.describe}</span>
+                        <Button className={classes.contact}>Liên Hệ</Button>
+                    </div>
+
+                ))}
+            </div>
+            <div className={classes.contentLoadMore}>
+                <Button className={classes.loadMore}>Load More</Button>
+            </div>
         </div>
     )
 }

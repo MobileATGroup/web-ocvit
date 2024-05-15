@@ -10,10 +10,14 @@ const useStyles = makeStyles({
       width: "100%",
       overflow: "hidden",
       position: "relative",
-      backgroundColor: 'red',
       display: 'flex',
       flexDirection: 'column',
     },
+    Pagination: {
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+    }
   }
 })
 
