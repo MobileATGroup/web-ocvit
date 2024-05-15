@@ -8,6 +8,7 @@ import SliderImage from "@/components/SliderImage"
 import { dataImage } from "./config"
 import MainLeft from "./MainLeft"
 import MainRight from "./MainRight"
+import Footer from "../components/Footer"
 
 type MenuLeftType = {
   childrenChild?: React.ReactNode
@@ -40,6 +41,7 @@ const Home = (props: MenuLeftType) => {
           </Grid>
         </Grid>
       </div>
+      <Footer />
     </div>
   )
 }
