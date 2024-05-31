@@ -93,3 +93,22 @@ export const dataMenuLeft = [
     },
 
 ]
+export const listProduct = async () => {
+    try {
+        // const res = await ProductApi.getProduct({params: {}})
+        const res = await fetch('https://epcpjccmvfvswjjaaksg.supabase.co/functions/v1/product')
+        const data = await res.json()
+        return data;
+    } catch (error) {
+        console.log(error);
+    }
+}
+export const listCategory = async () => {
+    try {
+        const res = await fetch('https://epcpjccmvfvswjjaaksg.supabase.co/functions/v1/category')
+        const data = await res.json()
+        return data;
+    } catch (error) {
+        console.log(error);
+    }
+}

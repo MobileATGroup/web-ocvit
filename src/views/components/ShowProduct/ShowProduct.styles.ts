@@ -10,35 +10,75 @@ const useStyles = makeStyles({
 })(theme => {
   return {
     root: {
-      height: "100%",
+      // height: "100%",
       width: "100%",
       overflow: "hidden",
       position: "relative",
       backgroundColor: 'white',
     },
+    // containerProduct: {
+    //   display: "flex",
+    //   flexDirection: "row", 
+    //   justifyContent: "space-between",
+    //   alignItems: "center",
+    //   width: "100%",
+    //   // backgroundColor: 'rgba(255, 255, 255, 1)'
+    //   gap: 30,
+    //   paddingBottom: 24,
+    // },
+    // container: {
+    //     display: "flex",
+    //     flexDirection: "column",
+    //     justifyContent: "flex-start",
+    //     alignItems: "flex-start",
+    //     position: "relative",
+    //     overflow: "hidden",
+    //     width: 'auto',
+    //     backgroundColor: 'rgba(255, 255, 255, 1)',
+    //     borderRadius: 30,
+    //     boxShadow: '0px 4px 4px 0px rgba(0, 0, 0, 0.045)',
+    //     paddingBottom: 24,
+    // },
+    // productRow: {
+    //     display: "flex",
+    //     flexDirection: "row",
+    //     justifyContent: "space-between",
+    //     alignItems: "center",
+    //     width: "100%",
+    //     gap: 30,
+    // },
     containerProduct: {
-      display: "flex",
-      flexDirection: "row", 
+      display: 'flex',
       justifyContent: "space-between",
-      alignItems: "center",
-      width: "100%",
-      // backgroundColor: 'rgba(255, 255, 255, 1)'
-      gap: 30,
-      paddingBottom: 24,
+      width: '100%',
+      gap: '30px', 
+      paddingBottom: '24px',
+      flexWrap: 'wrap',
     },
+    
     container: {
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "flex-start",
-        alignItems: "flex-start",
-        position: "relative",
-        overflow: "hidden",
-        width: 'auto',
-        backgroundColor: 'rgba(255, 255, 255, 1)',
-        borderRadius: 30,
-        boxShadow: '0px 4px 4px 0px rgba(0, 0, 0, 0.045)',
-        paddingBottom: 24,
+      flex: '0 0 calc(25% - 30px)', /* Mỗi hàng hiển thị 4 sản phẩm, trừ đi khoảng cách giữa các sản phẩm */
+      maxWidth: 'calc(25% - 30px)', /* Đảm bảo không bị tràn ra ngoài khi sử dụng flex-wrap */
+      display: 'flex',
+      flexDirection: 'column',
+      justifyContent: 'flex-start',
+      alignItems: 'flex-start',
+      position: 'relative',
+      overflow: 'hidden',
+      backgroundColor: 'rgba(255, 255, 255, 1)',
+      borderRadius: '30px',
+      boxShadow: '0px 4px 4px 0px rgba(0, 0, 0, 0.045)',
+      paddingBottom: '24px',
     },
+    
+    productRow :{
+      display: 'flex',
+      justifyContent: 'space-between',
+      alignItems: 'center',
+      width: '100%',
+      gap: '30px', /* Khoảng cách giữa các sản phẩm trong hàng */
+    },
+    
     img: {
         minWidth: '241px',
         height: '170px',
@@ -51,6 +91,8 @@ const useStyles = makeStyles({
         color: 'rgba(17, 20, 45, 1)',
         paddingLeft: 24,
         paddingRight: 24,
+        paddingTop: 24,
+        paddingBottom: 18,
     },
     describe: {
         fontFamily: Font_Poppins,
@@ -60,6 +102,7 @@ const useStyles = makeStyles({
         color: 'rgba(17, 20, 45, 1)',
         paddingLeft: 24,
         paddingRight: 24,
+        paddingBottom: 20,
     },
     contact: {
         fontFamily: Font_Poppins,

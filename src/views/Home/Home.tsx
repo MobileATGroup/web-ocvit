@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import { Box, Button, Grid } from "@mui/material"
 import useStyles from "./Home.styles"
-import React from "react"
+import React, { useState } from "react"
 import { observer } from "mobx-react"
 import Header from "../components/Header"
 import SliderImage from "@/components/SliderImage"
@@ -17,6 +17,7 @@ type MenuLeftType = {
 const Home = (props: MenuLeftType) => {
   const { childrenChild, ...rest } = props
   const { classes, cx } = useStyles()
+  const [selected, setSelected] = useState<number>()
 
   return (
     <div className={cx(classes.root)}>
@@ -34,10 +35,10 @@ const Home = (props: MenuLeftType) => {
         </div>
         <Grid container className={classes.bodyMain}>
           <Grid item xs={2} sm={2}>
-            <MainLeft />
+            <MainLeft setSelected={setSelected}/>
           </Grid>
           <Grid item xs={10} sm={10}>
-            <MainRight />
+            <MainRight selected={selected}/>
           </Grid>
         </Grid>
       </div>

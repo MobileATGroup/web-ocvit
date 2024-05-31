@@ -1,47 +1,51 @@
 /* eslint-disable jsx-a11y/alt-text */
 /* eslint-disable @next/next/no-img-element */
-import React from "react";
+import React, { useEffect } from "react";
 import useStyles from "./MainLeft.styles";
-import { dataMenuLeft } from "../config";
+import { dataMenuLeft, listCategory } from "../config";
 import DropDown from "@/components/DropDown";
 import AppSvgIcon from "@/components/AppSvgIcon";
 import { ReactComponent as icPhone } from "@/assets/icons/Phone.svg";
 
-const MainLeft = () => {
+type propsMenuLeft = {
+    setSelected: (index: number) => void;
+}
+const MainLeft = (props: propsMenuLeft) => {
     const { classes } = useStyles();
-    const [selected, setSelected] = React.useState<number>();
+    const { setSelected } = props;
+    const [dataCate, setDateCate] = React.useState<any>([]);
     const [selectedItem, setSelectedItem] = React.useState<number>();
-    const handleOnclickDropDown = (index: number) => {
-        if (selected === index) {
-            setSelected(undefined);
-        }
-        else {
-            setSelected(index);
-        }
-    }
-    const handleClickItem = (index: number) => {
-        setSelectedItem(index)
-    }
 
+    const handleOnclickDropDown = (index: number) => {
+        setSelected(index);
+        setSelectedItem(index);
+    }
+    useEffect(() => {
+        listCategory().then((res) => {
+            setDateCate(res?.categories)
+        })
+    }, [])
+    
     return (
         <div className={classes.root}>
             <div className={classes.container}>
                 <span className={classes.title}>Danh Mục Sản Phẩm</span>
                 <div className={classes.containerButon}>
-                    {dataMenuLeft.map((item, index) => (
+                    {dataCate && dataCate.map((item: any, index: number) => (
                         <div key={index} className={classes.contentButon}>
                             <DropDown
                                 key={index}
-                                title={item.title}
-                                index={index}
-                                handleOnclickDropDown={handleOnclickDropDown}
+                                title={item.name}
+                                index={item.id}
+                                handleOnclickDropDown={() => handleOnclickDropDown(item.id)}
+                                selected={selectedItem}
                             />
-                            {selected === index && item.dataDropDown && item.dataDropDown.map((items, index2) => (
+                            {/* {selected === index && item.dataDropDown && item.dataDropDown.map((items, index2) => (
                                 <li
                                     key={index2}
                                     onClick={() => handleClickItem(index2)}
                                     className={classes.listItem}>{items.title}</li>
-                            ))}
+                            ))} */}
                         </div>
                     ))}
                 </div>

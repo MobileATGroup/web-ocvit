@@ -6,7 +6,7 @@ import useStyles from "./DropDown.styles";
 type DropDownType = {
     title: string
     dataDropDown?: any[]
-    selected?: string
+    selected?: number
     handleOnclickDropDown?: (index: number) => void
     index?: number
 }
@@ -15,8 +15,8 @@ const DropDown = (props : DropDownType) => {
     const {classes} = useStyles();
     return (
         <div className={classes.container} onClick={() =>handleOnclickDropDown && handleOnclickDropDown(index || 0) }>
-            <AppSvgIcon component={iconDropDown} className={classes.icon}/>
-            <span className={classes.title}>{title}</span>
+            {/* <AppSvgIcon component={iconDropDown} className={classes.icon}/> */}
+            <span className={selected === index ?classes.titleActive :classes.title}>{title}</span>
         </div>
     )
 };
